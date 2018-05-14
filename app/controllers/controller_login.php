@@ -1,14 +1,14 @@
 <?php
 
-include_once ROOT."/app/model/model_table.php";
+include_once ROOT."/app/model/model_login.php";
 include_once ROOT."/app/core/controller.php";
 include_once ROOT."/app/core/view.php";
 
-class Controller_Table extends Controller
+class Controller_Login extends Controller
 {
     function __construct()
     {
-        $this->model = new Model_Table();
+        $this->model = new Model_Login();
         $this->view = new View();
     }
 
@@ -16,6 +16,6 @@ class Controller_Table extends Controller
     function action_index()
     {
         $data = $this->model->get_data();
-        $this->view->page_generate('table_view.php', $data, true);
+        $this->view->page_generate('login_view.php', $data, true);
     }
 }

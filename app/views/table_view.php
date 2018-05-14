@@ -42,25 +42,41 @@
                                 Location
                             </div>
                         </div>
-
-                        <?foreach ($table as $row):?>
+                        <?if(!empty($table)):?>
+                            <?foreach ($table as $row):?>
+                                <div class="row">
+                                    <div class="cell">
+                                        <?=$row['name']?>
+                                    </div>
+                                    <div class="cell">
+                                        <?=$row['age']?>
+                                    </div>
+                                    <div class="cell">
+                                        <?=$row['job_title']?>
+                                    </div>
+                                    <div class="cell">
+                                        <?=$row['location']?>
+                                    </div>
+                                </div>
+                            <?endforeach;?>
+                        <?else:?>
                             <div class="row">
-                                <div class="cell">
-                                    <?=$row['name']?>
+                                <div class="cell" data-title="Full Name">
+
                                 </div>
-                                <div class="cell">
-                                    <?=$row['age']?>
+                                <div class="cell" data-title="Age">
+                                    no data
                                 </div>
-                                <div class="cell">
-                                    <?=$row['job_title']?>
+                                <div class="cell" data-title="Job Title">
+
                                 </div>
-                                <div class="cell">
-                                    <?=$row['location']?>
+                                <div class="cell" data-title="Location">
+
                                 </div>
                             </div>
-                        <?endforeach;?>
+                        <?endif;?>
 
-						<div class="row">
+						<!--<div class="row">
 							<div class="cell" data-title="Full Name">
 								Joseph Smith
 							</div>
@@ -73,7 +89,7 @@
 							<div class="cell" data-title="Location">
 								Somerville, MA
 							</div>
-						</div>
+						</div>-->
 
 					</div>
 			</div>

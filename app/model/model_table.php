@@ -6,9 +6,12 @@ class Model_Table extends Model
 {
     public function get_data()
     {
-        return ['table'=>[
+        return [
+
+            'table'=>[
                 ['name' => 'magomed', 'age' => '', 'job_title'=>'job_title', 'location'=>'location'],
-                ['name' => 'magomed', 'age' => '', 'job_title'=>'job_title', 'location'=>'location']
+                ['name' => 'magomed', 'age' => '', 'job_title'=>'job_title', 'location'=>'location'],
+                ['name' => 'jon', 'age' => '24', 'job_title'=>'worker', 'location'=>'Moscow']
             ]
 
         ];
