@@ -48,24 +48,28 @@
 
 <div style="width: 50%; margin: 0px auto">
     <h3>Admin Panel</h3>
-    <form action="/action_page.php">
+    <?if($_SESSION['add_data'] == 1):?>
+        <h4 style="color: #4CAF50">Data added</h4>
+    <?endif;?>
+    <?php unset($_SESSION['add_data'])?>
+    <form action="http://makhmudovcoursework.loc/admin/add_in_table" method="post">
         <label for="fname">Full Name</label>
         <input type="text" id="fname" name="name" placeholder="Your name..">
 
         <label for="lname">Age </label>
         <input type="number" id="" name="age" placeholder="Your age.." min="1" max="100">
 
-        <label for="lname">Job </label>
-        <input type="text" id="lname" name="lastname" placeholder="Your job.." min="1" max="100">
+        <label for="job">Job </label>
+        <input type="text" id="job" name="job" placeholder="Your job.." min="1" max="100">
 
-        <label for="country">Location</label>
-        <select id="country" name="country">
-            <option value="moscow">Moscow</option>
-            <option value="tokyo">Tokyo</option>
-            <option value="washington">Washington</option>
-            <option value="makhachkala">Makhachkala</option>
+        <label for="location">Location</label>
+        <select id="location" name="location">
+            <option value="Moscow">Moscow</option>
+            <option value="Tokyo">Tokyo</option>
+            <option value="Washington">Washington</option>
+            <option value="Makhachkala">Makhachkala</option>
         </select>
-
+        <input type="hidden" name="add_data_in_table_people" value="1">
         <input type="submit" value="Submit">
     </form>
     <small>&copy; Magomed Makhmudov</small>
